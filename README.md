@@ -1,2 +1,2 @@
 # lib-gedit-latex-icons
-gedit-latex 用 icons ライブラリ
+gedit-latex 添付 icons ライブラリ
