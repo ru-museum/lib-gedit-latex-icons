@@ -1,0 +1,494 @@
+\documentclass[10pt]{ltjarticle}
+\usepackage{fontspec}
+
+% LINK
+\usepackage{url}
+\usepackage{hyperref}
+
+% 色の使用
+\usepackage{xcolor}
+\definecolor{code}{HTML}{800000}
+\definecolor{mylinkcolor}{RGB}{3, 112, 145} %{65, 145, 3} % 色定義
+\hypersetup{
+    colorlinks=true,
+    urlcolor=mylinkcolor, % 定義された色
+}
+
+% 表の使用
+\usepackage{float}
+
+% ICONS Lib 読込
+\usepackage{lib-gedit-latex-icons} 
+\usepackage{graphicx} 
+\usepackage{svg} 
+
+\usepackage{datetime2}
+\usepackage{setspace}
+
+% FONT-SIZE 定義
+\def\fs#1{\fontsize{#1pt}{14pt}\selectfont}
+
+% サンプル定義
+% DESKTOP-ICONS
+\newcommand{\emblemdebian}{\includegraphics[width=1em]{/usr/share/icons/desktop-base/64x64/emblems/emblem-debian.png}}
+% MATERIAL-ICONS
+\newcommand{\mdBuild}{\includesvg[width=1em]{./icons/build.svg}}
+
+% TITLEPAGE
+\title{{\fs{24.88}GEDIT-LaTeX-Plugin \\ ICONS for \LaTeX{}}\\ \vspace{10mm}{\fs{12} \textbf{[ PNG 版 ]}}\vspace{130mm}}
+\author{\href{https://github.com/ru-museum/}{ru\_museum}(GitHub)}
+\date{\today}
+\vspace{200mm}
+
+\begin{document}
+
+\begin{titlepage}
+  \maketitle
+	\vspace{\fill}
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+
+\section{"gedit-latex-plugin"}
+\subsection{概要}
+
+\begin{itemize}
+  \item LINUX 環境におけるエディタ \textbf{gedit} には\LaTeX{}向けのプラグイン \textbf{gedit-latex-plugin} があり、添付の ICON が利用出来ます。\\ 
+※ 詳細は 「3 gedit-latex ICONS 一覧」を参照して下さい。
+  
+  \item ICON 収納 PATH（LINUX Debian の場合）：\\
+  \textbf{/usr/share/gedit/plugins/latex/icons/} 
+
+\end{itemize}
+
+\subsection{インストールと設定}
+
+\begin{itemize}
+  \item インストール\\ 
+        \$ apt-get install gedit-latex-plugin (Debian の場合) \\
+\vspace{-6mm}
+  \item プラグインの設定で SyncTeX をオンにして置きます(作業用)。\\ 
+SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
+\end{itemize}
+
+\subsection{使用方法}
+
+\subsubsection{ライブラリの読込}
+{\textbackslash}usepackage\{gedit-latex-icons\} \% ICON 定義ライブラリ \\ 
+　{\textbackslash}usepackage\{graphicx\}　　　　\% PNG 用\\ 
+　{\textbackslash}usepackage\{svg\} 　　　　　　\% SVG 形式使用の場合\\ 
+
+\% 色を使用する場合\\
+　{\textbackslash}usepackage\{xcolor\}\\
+　{\textbackslash}definecolor\{code\}\{HTML\}\{800000\}\\
+　{\textbackslash}definecolor\{mylinkcolor\}\{RGB\}\{3, 112, 145\}
+
+\subsubsection{定義}
+// フォントサイズのマクロ定義　\\
+　{\textbackslash}def{\textbackslash}fs\#1\{{\textbackslash}fontsize\{\#1pt\}\{14pt\}{\textbackslash}selectfont\}\\
+
+// ICON のマクロ定義\\
+　{\textbackslash}newcommand\{{\textbackslash}\textbf{gl}closeenv\}\{{\textbackslash}@icon\{{\textbackslash}@dir/close\_env.png\}\}\\
+\begin{itemize}\vspace{-6mm}
+  \item システムとの衝突を避ける為、prefix として \textbf{gl} を付与しています。
+\vspace{-3mm}
+　\item command 名はファイル名に準じ \_（アンダーバー）、-(ハイフン) 等は使用出来ませんので削除しています。
+\end{itemize}
+
+\subsubsection{表示}
+
+\begin{itemize}
+
+  \item 各々定義した command 名で表示させます。\\
+  ※ ファイルは基本 PNG 形式ですので過度の拡大は像が粗くなります。 
+
+\begin{table}[H]
+\caption{表示例} %キャプション
+\vspace{4mm}
+{\hspace{10mm}
+\begin{tabular}{lll}
+\textbf{サイズ} & \textbf{記述} & \hspace{4mm}\textbf{表示}\\
+無指定 & {\textbackslash}glabort & \hspace{8mm}\glabort\\
+{\fs{18}18pt} & \{{\textbackslash}fs\{18\} {\textbackslash}glabort\} & \hspace{5mm}{\fs{18} \glabort}\\
+{\fs{40}40pt} & \{{\textbackslash}fs\{40\} {\textbackslash}glabort\} & {\fs{40} \glabort}\\
+\end{tabular}
+}
+\end{table}
+  
+\vspace{-3mm}
+  \item \LaTeX{} 付属のシステムアイコンは、\textbf{text-} で使うことが出来ます。\\
+{\textbackslash}textparagraph： \textparagraph \\
+{\textbackslash}textcopyright ： \textcopyright
+  \item その他、OS のデスクトップ環境における各種テーマのアイコンセットも同様に使うことが出来ます。\\ 
+指定PATH：/usr/share/icons/ (Debian の場合)\\
+
+// 定義例\\
+{\textbackslash}newcommand\{{\textbackslash}emblemdebian\}\{/usr/share/icons/desktop-base/64x64/emblems/emblem-debian.png\}\} \\
+
+\vspace{-6mm}
+\begin{table}[H]
+\caption{表示例}
+\vspace{4mm}
+{\hspace{10mm}
+\begin{tabular}{lll}
+\textbf{サイズ} & \textbf{記述} & \hspace{4mm}\textbf{表示}\\
+18pt & \{{\textbackslash}fs\{18\} {\textbackslash}emblemdebian\} & \hspace{5mm}{\fs{18} \emblemdebian}\\
+40pt & \{{\textbackslash}fs\{40\} {\textbackslash}emblemdebian\} & {\fs{40} \emblemdebian}\\
+\end{tabular}
+}
+\end{table}
+\end{itemize}
+
+\newpage
+
+\section{付録：アイコンライブラリの使用}
+使用例：\href{https://fonts.google.com/icons}{Material Design Icons}\\
+\hspace{4mm}詳しくはこちらを参考にして下さい \glRightarrow　\href{https://github.com/ru-museum/material-design-icons-latex}{material-design-icons-latex}（GitHub）
+
+\begin{itemize}
+  \item Material Design Icons 以外のアイコンライブラリも同様の手順で利用出来ます。
+\end{itemize}
+
+\subsection{ICON ファイル（.svg）のダウンロード。}
+\href{https://fonts.google.com/icons}{Material Design Icons}から使用するアイコンをクリックし SVG ファイルを所定のフォルダに保存します。
+
+\begin{itemize}
+  \item ファイル名は簡便なものに変更して置きます。\\
+\hspace{4mm}例： thumb\_up\_black\_24dp.svg → thumb\_up.svg　
+\end{itemize}
+
+\subsection{パッケージファイルの編集。}
+\textbf{materialicons.sty}\\  
+{\fs{8}
+\hspace{4mm}\% フォントサイズ：変更可能\vspace{1mm}\\
+\hspace{4mm}\textbackslash def\textbackslash @icon\{\textbackslash includesvg[width=\textbf{1em}]\}\vspace{2mm}\\
+\hspace{4mm}\% アイコンファイル（.svg）フォルダ：変更可能\vspace{1mm}\\
+\hspace{4mm}\textbackslash def\textbackslash @dir\{\textbf{./icons}\}\vspace{2mm}\\
+\hspace{4mm}\% 以下にファイル名に従い追加します\vspace{1mm}\\
+\hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash mdBuild}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{build}}.svg\}\}\\
+\hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash mdAccessibility}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{accessibility}}.svg\}\}
+}
+
+\subsection{TEX 内での表示。}
+\% パッケージの読込\\
+\hspace{4mm}\textbackslash usepackage\{materiaicons\}\\
+\hspace{4mm}\textbackslash usepackage\{svg\} \% 必須\\
+
+\% フォントサイズのマクロを定義\\
+\hspace{4mm}\textbackslash def\textbackslash fs\#1\{\textbackslash fontsize\{\#1pt\}\{14pt\}\textbackslash selectfont\}
+  
+\begin{table}[H]
+\centering
+\caption{アイコンの表示}
+\begin{tabular}{lll}
+デフォルト & サイズ指定 & 表示\\
+\hline
+\textbackslash mdBuild & \{\textbackslash fs\{20\} \textbackslash mdBuild\} & {\fs{20} \mdBuild}\\
+\end{tabular}
+\end{table}
+
+\newpage
+
+\section{gedit-latex ICONS 一覧}
+
+\hspace{4mm} フォルダ PATH：/usr/share/gedit/plugins/latex/icons/ (Debian)
+
+\begin{itemize}
+  \item command 名は基本的に prefix として \textbf{gl} を付与したものとなります。\vspace{-2mm}
+  \item \_（アンダーバー）、-(ハイフン) は削除されます。
+\end{itemize}
+
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── abort.png \hspace{30mm} &\glabort\\
+　├── bb.png & \glbb\\
+　├── bf.png & \glbf\\
+　├── bib.png & \glbib\\
+　├── braces.png & \glbraces\\
+　├── brackets.png & \glbrackets\\
+　├── build\-image.png & \glbuildimage\\
+　├── cal.png & \glcal\\
+　├── calendar.png & \glcalendar\\
+　├── chapter.png & \glchapter\\
+　├── close\_env.png & \glcloseenv\\
+　├── description.png & \gldescription\\
+　├── displaymath.png & \gldisplaymath\\
+　├── document.png & \gldocument\\
+　├── documents.png & \gldocuments\\
+　├── dvbars.png & \gldvbars\\
+　├── enumerate.png & \glenumerate\\
+　├── eqnarray.png & \gleqnarray\\
+　├── equation.png & \glequation\\
+　├── error.png & \glerror\\
+　├── field.png & \glfield\\
+　├── frak.png & \glfrak\\
+　├── graphics.png & \glgraphics\\
+　├── i\_choice.png & \glichoice\\
+　├── i\_command.png & \glicommand\\
+　├── it.png & \glit\\
+　\end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── itemize.png & \glitemize\\
+　├── justify\-center.png & \gljustifycenter\\
+　├── justify\-left.png & \gljustifyleft\\
+　├── justify\-right.png & \gljustifyright\\
+　├── label.png & \gllabel\\
+　├── listing.png & \gllisting\\
+　├── math.png & \glmath\\
+　├── okay.png & \glokay\\
+　├── outline.png & \gloutline\\
+　├── paragraph.png & \glparagraph\\
+　├── parantheses.png & \glparantheses\\
+　├── part.png & \glpart\\
+　├── rm.png & \glrm\\
+　├── run.png & \glrun\\
+　├── sc.png & \glsc\\
+　├── section.png & \glsection\\
+　├── sf.png & \glsf\\
+　├── snippet.png & \glsnippet\\
+　├── subsection.png & \glsubsection\\
+　├── subsubsection.png & \glsubsubsection\\
+　├── table.png & \gltable\\
+　├── task.png & \gltask\\
+　├── tree\_chapter.png & \gltreechapter\\
+　├── tree\_include.png & \gltreeinclude\\
+　├── tree\_includegraphics.png & \gltreeincludegraphics\\
+　├── tree\_paragraph.png & \gltreeparagraph\\
+　├── tree\_part.png & \gltreepart\\
+　├── tree\_section.png & \gltreesection\\
+　├── tree\_subsection.png & \gltreesubsection\\
+　├── tree\_subsubsection.png & \gltreesubsubsection\\
+　\end{tabular}
+\end{table}  
+
+\newpage
+　
+\begin{table}[H]
+\vspace{-30mm}
+\fs{14pt}
+\begin{tabular}{ll}
+　├── tree\_table.png & \gltreetable\\
+　├── tt.png \hspace{37mm} & \gltt\\
+　├── underline.png & \glunderline\\
+　├── uneqnarray.png & \gluneqnarray\\
+　├── users.png & \glusers\\
+　├── vbars.png & \glvbars\\
+　├── warning.png & \glwarning\\
+ \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+├── \textbf{ACCENTS} & \\
+　├── acute.png \hspace{30mm} & \glacute\\
+　├── bar.png & \glbar\\
+　├── breve.png & \glbreve\\
+　├── check.png & \glcheck\\
+　├── ddot.png & \glddot\\
+　├── dot.png & \gldot\\
+　├── grave.png & \glgrave\\
+　├── hat.png & \glhat\\
+　├── tilde.png & \gltilde\\
+　├── vec.png & \glvec\\
+├── \textbf{ARROWS} & \\
+　├── Leftarrow.png & \glLeftarrow\\
+　├── Leftrightarrow.png & \glLeftrightarrow\\
+　├── Longleftarrow.png & \glLongleftarrow\\
+　├── Longleftrightarrow.png & \glLongleftrightarrow\\
+　├── Longrightarrow.png & \glLongrightarrow\\
+　├── Rightarrow.png & \glRightarrow\\
+　├── hookleftarrow.png & \glhookleftarrow\\
+　├── hookrightarrow.png & \glhookrightarrow\\
+　├── leadsto.png & \glleadsto\\
+　├── leftarrow.png & \glleftarrow\\
+　├── leftharpoondown.png & \glleftharpoondown\\
+　├── leftharpoonup.png & \glleftharpoonup\\
+　├── leftrightarrow.png & \glleftrightarrow\\
+　├── leftrightarrows.png & \glleftrightarrows\\
+　├── leftrightharpoons.png & \glleftrightharpoons\\
+　├── longleftarrow.png & \gllongleftarrow\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── longleftrightarrow.png & \gllongleftrightarrow\\
+　├── longmapsto.png \hspace{15mm} & \gllongmapsto\\
+　├── longrightarrow.png & \gllongrightarrow\\
+　├── mapsto.png & \glmapsto\\
+　├── rightarrow.png & \glrightarrow\\
+　├── rightharpoondown.png & \glrightharpoondown\\
+　├── rightharpoonup.png & \glrightharpoonup\\
+　├── rightleftarrows.png & \glrightleftarrows\\
+　├── rightleftharpoons.png & \glrightleftharpoons\\
+├── \textbf{GREEK} & \\
+　├── Delta.png & \glDelta\\
+　├── Gamma.png & \glGamma\\
+　├── Lambda.png & \glLambda\\
+　├── Omega.png & \glOmega\\
+　├── Phi.png & \glPhi\\
+　├── Pi.png & \glPi\\
+　├── Psi.png & \glPsi\\
+　├── Sigma.png & \glSigma\\
+　├── Theta.png & \glTheta\\
+　├── Upsilon.png & \glUpsilon\\
+　├── Xi.png & \glXi\\
+　├── alpha.png & \glalpha\\
+　├── beta.png & \glbeta\\
+　├── chi.png & \glchi\\
+　├── delta.png & \gldelta\\
+　├── epsilon.png & \glepsilon\\
+　├── eta.png & \gleta\\
+　├── gamma.png & \glgamma\\
+　├── iota.png & \gliota\\
+　├── kappa.png & \glkappa\\
+　├── lambda.png & \gllambda\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── mu.png \hspace{32mm} & \glmu\\
+　├── nu.png & \glnu\\
+　├── omega.png & \glomega\\
+　├── phi.png & \glphi\\
+　├── pi.png & \glpi\\
+　├── psi.png & \glpsi\\
+　├── rho.png & \glrho\\
+　├── sigma.png & \glsigma\\
+　├── tau.png & \gltau\\
+　├── theta.png & \gltheta\\
+　├── upsilon.png & \glupsilon\\
+　├── varepsilon.png & \glvarepsilon\\
+　├── varphi.png & \glvarphi\\
+　├── varpi.png & \glvarpi\\
+　├── varrho.png & \glvarrho\\
+　├── varsigma.png & \glvarsigma\\
+　├── vartheta.png & \glvartheta\\
+　├── xi.png & \glxi\\
+　├── zeta.png & \glzeta\\
+├── \textbf{LIMITERS} & \\
+　├── Vert.png & \glVert\\
+　├── langle.png & \gllangle\\
+　├── lbrace.png & \gllbrace\\
+　├── lceil.png & \gllceil\\
+　├── lfloor.png & \gllfloor\\
+　├── rangle.png & \glrangle\\
+　├── rbrace.png & \glrbrace\\
+　├── rceil.png & \glrceil\\
+　├── rfloor.png & \glrfloor\\
+　├── vert.png & \glvert\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+├── \textbf{OPERATORS} & \\
+　├── approx.png \hspace{24mm} & \glapprox\\
+　├── ast.png & \glast\\
+　├── bullet.png & \glbullet\\
+　├── cap.png & \glcap\\
+　├── cdot.png & \glcdot\\
+　├── circ.png & \glcirc\\
+　├── cong.png & \glcong\\
+　├── cup.png & \glcup\\
+　├── div.png & \gldiv\\
+　├── equiv.png & \glequiv\\
+　├── eth.png & \gleth\\
+　├── exists.png & \glexists\\
+　├── forall.png & \glforall\\
+　├── geq.png & \glgeq\\
+　├── gg.png & \glgg\\
+　├── in.png & \glin\\
+　├── land.png & \glland\\
+　├── leq.png & \glleq\\
+　├── ll.png & \glll\\
+　├── lor.png & \gllor\\
+　├── mid.png & \glmid\\
+　├── nabla.png & \glnabla\\
+　├── neg.png & \glneg\\
+　├── neq.png & \glneq\\
+　├── nexists.png & \glnexists\\
+　├── ni.png & \glni\\
+　├── oplus.png & \gloplus\\
+　├── parallel.png & \glparallel\\
+　├── partial.png & \glpartial\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── perp.png \hspace{28mm} & \glperp\\
+　├── pm.png & \glpm\\
+　├── propto.png & \glpropto\\
+　├── setminus.png & \glsetminus\\
+　├── sim.png & \glsim\\
+　├── simeq.png & \glsimeq\\
+　├── star.png & \glstar\\
+　├── subset.png & \glsubset\\
+　├── subseteq.png & \glsubseteq\\
+　├── supset.png & \glsupset\\
+　├── supseteq.png & \glsupseteq\\
+　├── times.png & \gltimes\\
+　├── uplus.png & \gluplus\\
+　├── varnothing.png & \glvarnothing\\
+├── \textbf{SPECIAL} & \\
+　├── Im.png & \glIm\\
+　├── P.png & \glP\\
+　├── Re.png & \glRe\\
+　├── S.png & \glS\\
+　├── aleph.png & \glaleph\\
+　├── angle.png & \glangle\\
+　├── cdots.png & \glcdots\\
+　├── complement.png & \glcomplement\\
+　├── dagger.png & \gldagger\\
+　├── ddots.png & \glddots\\
+　├── ell.png & \glell\\ 
+　├── hbar.png & \glhbar\\
+　├── iint.png & \gliint\\
+　├── infty.png & \glinfty\\
+　├── int.png & \glint\\
+　\end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── ldots.png & \glldots\\
+　├── oint.png \hspace{28mm} & \gloint\\
+　├── prime.png & \glprime\\
+　├── prod.png & \glprod\\
+　├── sum.png & \glsum\\
+　├── textcopyright.png & \gltextcopyright\\
+　├── textregistered.png & \gltextregistered\\
+　├── texttrademark.png & \gltexttrademark\\
+　├── vdots.png & \glvdots\\
+　├── wp.png & \glwp\\
+　\end{tabular}
+\end{table}
+
+\end{document}
