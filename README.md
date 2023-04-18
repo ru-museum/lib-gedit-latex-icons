@@ -1,5 +1,5 @@
 # lib-gedit-latex-icons
-gedit-latex 付属 ICON 用ライブラリ
+Library for gedit-latex-ICONS
 
 ## 概要
 - LINUX 用エディタ **gedit** のプラグインである **gedit-latex** に付属している ICON を使用する為のライブラリです。  
