@@ -3,6 +3,7 @@ Library for gedit-latex-ICONS
 
 ## 概要
 - LINUX 用エディタ **gedit** のプラグインである **gedit-latex** に付属している ICON を使用する為のライブラリです。  
+- 「ICONS 一覧」は **gedit-latex-icons.pdf** にあります。
 
 ## 注意点
 - このライブラリは **GNU/Linux Debian** 環境を想定しています。  
