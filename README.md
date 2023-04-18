@@ -10,6 +10,8 @@ Library for gedit-latex-ICONS
 - ICON 自体は PNG ですので過度の拡大は**像が粗く**なります。  
 
 ## 使用方法
+  - 詳細は
+  [GEDIT-LaTeX-Plugin ICONS for LaTeX](https://github.com/ru-museum/lib-gedit-latex-icons/blob/main/gedit-latex-icons.pdf)（gedit-latex-icons.pdf）をご覧下さい。 
   
 1. ライブラリ **lib-gedit-latex-icons.sty** の読込：
 
