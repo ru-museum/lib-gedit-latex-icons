@@ -154,8 +154,6 @@
 \end{table}
 \end{itemize}
 
-\newpage
-
 \section{アイコンライブラリの使用：付録}
 使用例：\href{https://fonts.google.com/icons}{Material Design Icons}\\
 \hspace{4mm}詳細参照：\href{https://github.com/ru-museum/material-design-icons-latex}{material-design-icons-latex} \bsgithub
@@ -172,6 +170,8 @@
 \hspace{4mm}例： thumb\_up\_black\_24dp.svg → thumb\_up.svg　
 \end{itemize}
 
+\newpage
+
 \subsection{パッケージファイルの編集。}
 \textbf{materialicons.sty}\\  
 {\fs{8}
@@ -184,6 +184,7 @@
 \hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash bsgithub}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{github}}.svg\}\} \% Bootstrap Icons
 
 }
+
 
 \subsection{TEX 内での表示。}
 \% パッケージの読込\\
@@ -212,14 +213,16 @@ Bootstrap Icons & \textbackslash bsgithub \bsgithub & \{\textbackslash fs\{20\} 
 \hspace{4mm} フォルダ：/usr/share/gedit/plugins/latex/icons/ (Debian)
 
 \begin{itemize}
-  \item command 名は基本的に prefix として \textbf{gl} を付与したものとなります。\vspace{-2mm}
-  \item \_（アンダーバー）、-(ハイフン) は削除されます。
+  \item command 名は基本 prefix として \textcolor{code}{\textbf{gl}} を付与しています。\vspace{-2mm}
+  \item \_（アンダーバー）、-(ハイフン) は削除されます。\vspace{-2mm}
 \end{itemize}
 
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
-　├── {\textbackslash}glabort \hspace{31mm} &\glabort\\
+\hspace{20mm}{\fs{8pt}COMMAND} & {\fs{8pt}ICON}\\
+\hspace{20mm}----------- & -----\\
+　├── {\textbackslash}glabort \hspace{31mm} & \glabort\\
 　├── {\textbackslash}glbb & \glbb\\
 　├── {\textbackslash}glbf & \glbf\\
 　├── {\textbackslash}glbib & \glbib\\
