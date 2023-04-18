@@ -21,7 +21,9 @@ Library for gedit-latex-ICONS
 \usepackage{graphicx} % PNG 用(必須) 
 \usepackage{svg}      % SVG を使用の場合 
 ```
-2. 表示：基本的に prefix として先頭に **gl** を付与します。   
+2. 表示：  
+- command 名は基本的にファイル名に prefix として先頭に **gl** を付与しています。   
+- command 名は「ICONS 一覧」（gedit-latex-icons.pdf）を参照して下さい。  
 ```
 \glabort
 ```
