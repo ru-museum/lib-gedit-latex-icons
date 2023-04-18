@@ -1,4 +1,4 @@
-\documentclass[10pt]{ltjarticle}
+\documentclass[a5j,10pt]{ltjarticle}
 \usepackage{fontspec}
 
 % LINK
@@ -8,10 +8,16 @@
 % 色の使用
 \usepackage{xcolor}
 \definecolor{code}{HTML}{800000}
-\definecolor{mylinkcolor}{RGB}{3, 112, 145} %{65, 145, 3} % 色定義
+\definecolor{mylinkcolor}{RGB}{3, 112, 145} % 色定義
+\definecolor{lightblu}{HTML}{004c8c} 
+\definecolor{orangish}{wave}{620}
+\colorlet{ochre}{blue!30!yellow!70!}
+
 \hypersetup{
     colorlinks=true,
-    urlcolor=mylinkcolor, % 定義された色
+    citecolor=blue,
+    linkcolor=lightblu,
+    urlcolor=mylinkcolor, % 定義された色 MidnightBlue
 }
 
 % 表の使用
@@ -33,12 +39,13 @@
 \newcommand{\emblemdebian}{\includegraphics[width=1em]{/usr/share/icons/desktop-base/64x64/emblems/emblem-debian.png}}
 % MATERIAL-ICONS
 \newcommand{\mdBuild}{\includesvg[width=1em]{./icons/build.svg}}
+% BOOTSTRAP-ICONS
+\newcommand{\bsgithub}{\includesvg[width=1em]{./icons/github.svg}}
 
 % TITLEPAGE
-\title{{\fs{24.88}GEDIT-LaTeX-Plugin \\ ICONS for \LaTeX{}}\\ \vspace{10mm}{\fs{12} \textbf{[ PNG 版 ]}}\vspace{130mm}}
-\author{\href{https://github.com/ru-museum/}{ru\_museum}(GitHub)}
+\title{{\fs{24.88}GEDIT-LaTeX-Plugin \\ ICONS for \LaTeX{}}\\ \vspace{10mm}{\fs{12} \textbf{[ PNG 版 ]}}\vspace{80mm}}
+\author{\href{https://github.com/ru-museum/}{ru\_museum \bsgithub}} 
 \date{\today}
-\vspace{200mm}
 
 \begin{document}
 
@@ -50,12 +57,17 @@
 
 \newpage
 
+\tableofcontents
+\clearpage
+
+\newpage
+
 \section{"gedit-latex-plugin"}
 \subsection{概要}
 
 \begin{itemize}
-  \item LINUX 環境におけるエディタ \textbf{gedit} には\LaTeX{}向けのプラグイン \textbf{gedit-latex-plugin} があり、添付の ICON が利用出来ます。\\ 
-※ 詳細は 「3 gedit-latex ICONS 一覧」を参照して下さい。
+  \item LINUX 用エディタ \textbf{gedit} には\LaTeX{}向けのプラグイン \textbf{gedit-latex-plugin} があり、添付の ICON が利用出来ます。\\ 
+※ 参照： 「3 gedit-latex ICONS 一覧」
   
   \item ICON 収納 PATH（LINUX Debian の場合）：\\
   \textbf{/usr/share/gedit/plugins/latex/icons/} 
@@ -67,17 +79,18 @@
 \begin{itemize}
   \item インストール\\ 
         \$ apt-get install gedit-latex-plugin (Debian の場合) \\
-\vspace{-6mm}
+        {\fs{8} ※ PDF viewer(evince 等)、inkscape(SVG) が必要な場合があります。} 
+\vspace{-2mm}
   \item プラグインの設定で SyncTeX をオンにして置きます(作業用)。\\ 
-SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
+{\fs{8}SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。}
 \end{itemize}
 
 \subsection{使用方法}
 
 \subsubsection{ライブラリの読込}
-{\textbackslash}usepackage\{gedit-latex-icons\} \% ICON 定義ライブラリ \\ 
-　{\textbackslash}usepackage\{graphicx\}　　　　\% PNG 用\\ 
-　{\textbackslash}usepackage\{svg\} 　　　　　　\% SVG 形式使用の場合\\ 
+{\textbackslash}usepackage\{lib-gedit-latex-icons\} \% ICON 定義ライブラリ \\ 
+　{\textbackslash}usepackage\{graphicx\}\hspace{18mm}\% PNG 用\\ 
+　{\textbackslash}usepackage\{svg\}\hspace{26mm}\% SVG 使用時(inkscape 必須)\\ 
 
 \% 色を使用する場合\\
 　{\textbackslash}usepackage\{xcolor\}\\
@@ -95,6 +108,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \vspace{-3mm}
 　\item command 名はファイル名に準じ \_（アンダーバー）、-(ハイフン) 等は使用出来ませんので削除しています。
 \end{itemize}
+
 
 \subsubsection{表示}
 
@@ -121,10 +135,10 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 {\textbackslash}textparagraph： \textparagraph \\
 {\textbackslash}textcopyright ： \textcopyright
   \item その他、OS のデスクトップ環境における各種テーマのアイコンセットも同様に使うことが出来ます。\\ 
-指定PATH：/usr/share/icons/ (Debian の場合)\\
+指定PATH：/usr/share/icons/... (Debian の場合)\\
 
 // 定義例\\
-{\textbackslash}newcommand\{{\textbackslash}emblemdebian\}\{/usr/share/icons/desktop-base/64x64/emblems/emblem-debian.png\}\} \\
+{\textbackslash}newcommand\{{\textbackslash}emblemdebian\}\{/usr/share/icons/desktop-base/\\ 64x64/emblems/emblem-debian.png\}\} \\
 
 \vspace{-6mm}
 \begin{table}[H]
@@ -142,16 +156,16 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 
 \newpage
 
-\section{付録：アイコンライブラリの使用}
+\section{アイコンライブラリの使用：付録}
 使用例：\href{https://fonts.google.com/icons}{Material Design Icons}\\
-\hspace{4mm}詳しくはこちらを参考にして下さい \glRightarrow　\href{https://github.com/ru-museum/material-design-icons-latex}{material-design-icons-latex}（GitHub）
+\hspace{4mm}詳細参照：\href{https://github.com/ru-museum/material-design-icons-latex}{material-design-icons-latex} \bsgithub
 
 \begin{itemize}
-  \item Material Design Icons 以外のアイコンライブラリも同様の手順で利用出来ます。
+  \item 他の公開されているオープンソースのアイコンライブラリでも同様の手順で利用出来ます。
 \end{itemize}
 
 \subsection{ICON ファイル（.svg）のダウンロード。}
-\href{https://fonts.google.com/icons}{Material Design Icons}から使用するアイコンをクリックし SVG ファイルを所定のフォルダに保存します。
+\href{https://fonts.google.com/icons}{Material Design Icons}から使用するアイコンの SVG ファイルをダウンロードし所定のフォルダに保存します（例：icons）。
 
 \begin{itemize}
   \item ファイル名は簡便なものに変更して置きます。\\
@@ -167,7 +181,8 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \hspace{4mm}\textbackslash def\textbackslash @dir\{\textbf{./icons}\}\vspace{2mm}\\
 \hspace{4mm}\% 以下にファイル名に従い追加します\vspace{1mm}\\
 \hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash mdBuild}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{build}}.svg\}\}\\
-\hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash mdAccessibility}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{accessibility}}.svg\}\}
+\hspace{4mm}\textbackslash newcommand\{\textcolor{code}{\textbf{\textbackslash bsgithub}}\}\{\textbackslash@icon\{\textbackslash@dir/\textcolor{code}{\textbf{github}}.svg\}\} \% Bootstrap Icons
+
 }
 
 \subsection{TEX 内での表示。}
@@ -179,12 +194,14 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \hspace{4mm}\textbackslash def\textbackslash fs\#1\{\textbackslash fontsize\{\#1pt\}\{14pt\}\textbackslash selectfont\}
   
 \begin{table}[H]
-\centering
+% \centering
 \caption{アイコンの表示}
 \begin{tabular}{lll}
-デフォルト & サイズ指定 & 表示\\
-\hline
-\textbackslash mdBuild & \{\textbackslash fs\{20\} \textbackslash mdBuild\} & {\fs{20} \mdBuild}\\
+アイコンライブラリ & デフォルト & サイズ指定\\
+\hline\vspace{-4mm}\\
+Material Design Icons & \textbackslash mdBuild \mdBuild & \{\textbackslash fs\{20\} \textbackslash mdBuild\}  {\fs{20} \mdBuild}\\
+Bootstrap Icons & \textbackslash bsgithub \bsgithub & \{\textbackslash fs\{20\} \textbackslash bsgithub\} {\fs{20} \bsgithub}\\
+
 \end{tabular}
 \end{table}
 
@@ -192,7 +209,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 
 \section{gedit-latex ICONS 一覧}
 
-\hspace{4mm} フォルダ PATH：/usr/share/gedit/plugins/latex/icons/ (Debian)
+\hspace{4mm} フォルダ：/usr/share/gedit/plugins/latex/icons/ (Debian)
 
 \begin{itemize}
   \item command 名は基本的に prefix として \textbf{gl} を付与したものとなります。\vspace{-2mm}
@@ -202,7 +219,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
-　├── abort.png \hspace{30mm} &\glabort\\
+　├── abort.png \hspace{31mm} &\glabort\\
 　├── bb.png & \glbb\\
 　├── bf.png & \glbf\\
 　├── bib.png & \glbib\\
@@ -220,14 +237,6 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── dvbars.png & \gldvbars\\
 　├── enumerate.png & \glenumerate\\
 　├── eqnarray.png & \gleqnarray\\
-　├── equation.png & \glequation\\
-　├── error.png & \glerror\\
-　├── field.png & \glfield\\
-　├── frak.png & \glfrak\\
-　├── graphics.png & \glgraphics\\
-　├── i\_choice.png & \glichoice\\
-　├── i\_command.png & \glicommand\\
-　├── it.png & \glit\\
 　\end{tabular}
 \end{table}
 
@@ -236,6 +245,14 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
+　├── equation.png \hspace{24mm} & \glequation\\
+　├── error.png & \glerror\\
+　├── field.png & \glfield\\
+　├── frak.png & \glfrak\\
+　├── graphics.png & \glgraphics\\
+　├── i\_choice.png & \glichoice\\
+　├── i\_command.png & \glicommand\\
+　├── it.png & \glit\\
 　├── itemize.png & \glitemize\\
 　├── justify\-center.png & \gljustifycenter\\
 　├── justify\-left.png & \gljustifyleft\\
@@ -251,6 +268,15 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── rm.png & \glrm\\
 　├── run.png & \glrun\\
 　├── sc.png & \glsc\\
+　\end{tabular}
+\end{table}  
+
+\newpage
+　
+\begin{table}[H]
+\vspace{-30mm}
+\fs{14pt}
+\begin{tabular}{ll}
 　├── section.png & \glsection\\
 　├── sf.png & \glsf\\
 　├── snippet.png & \glsnippet\\
@@ -266,15 +292,6 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── tree\_section.png & \gltreesection\\
 　├── tree\_subsection.png & \gltreesubsection\\
 　├── tree\_subsubsection.png & \gltreesubsubsection\\
-　\end{tabular}
-\end{table}  
-
-\newpage
-　
-\begin{table}[H]
-\vspace{-30mm}
-\fs{14pt}
-\begin{tabular}{ll}
 　├── tree\_table.png & \gltreetable\\
 　├── tt.png \hspace{37mm} & \gltt\\
 　├── underline.png & \glunderline\\
@@ -282,6 +299,12 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── users.png & \glusers\\
 　├── vbars.png & \glvbars\\
 　├── warning.png & \glwarning\\
+├── \textbf{ACCENTS} & \\
+　├── acute.png \hspace{30mm} & \glacute\\
+　├── bar.png & \glbar\\
+　├── breve.png & \glbreve\\
+　├── check.png & \glcheck\\
+　├── ddot.png & \glddot\\
  \end{tabular}
 \end{table}
 
@@ -289,13 +312,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
-├── \textbf{ACCENTS} & \\
-　├── acute.png \hspace{30mm} & \glacute\\
-　├── bar.png & \glbar\\
-　├── breve.png & \glbreve\\
-　├── check.png & \glcheck\\
-　├── ddot.png & \glddot\\
-　├── dot.png & \gldot\\
+　├── dot.png \hspace{36mm} & \gldot\\
 　├── grave.png & \glgrave\\
 　├── hat.png & \glhat\\
 　├── tilde.png & \gltilde\\
@@ -317,6 +334,8 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── leftrightarrows.png & \glleftrightarrows\\
 　├── leftrightharpoons.png & \glleftrightharpoons\\
 　├── longleftarrow.png & \gllongleftarrow\\
+　├── longleftrightarrow.png & \gllongleftrightarrow\\
+　├── longmapsto.png \hspace{15mm} & \gllongmapsto\\
  \end{tabular}
 \end{table}
 
@@ -325,9 +344,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
-　├── longleftrightarrow.png & \gllongleftrightarrow\\
-　├── longmapsto.png \hspace{15mm} & \gllongmapsto\\
-　├── longrightarrow.png & \gllongrightarrow\\
+　├── longrightarrow.png \hspace{12mm} & \gllongrightarrow\\
 　├── mapsto.png & \glmapsto\\
 　├── rightarrow.png & \glrightarrow\\
 　├── rightharpoondown.png & \glrightharpoondown\\
@@ -350,12 +367,6 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── beta.png & \glbeta\\
 　├── chi.png & \glchi\\
 　├── delta.png & \gldelta\\
-　├── epsilon.png & \glepsilon\\
-　├── eta.png & \gleta\\
-　├── gamma.png & \glgamma\\
-　├── iota.png & \gliota\\
-　├── kappa.png & \glkappa\\
-　├── lambda.png & \gllambda\\
  \end{tabular}
 \end{table}
 
@@ -364,6 +375,12 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
+　├── epsilon.png \hspace{28mm} & \glepsilon\\
+　├── eta.png & \gleta\\
+　├── gamma.png & \glgamma\\
+　├── iota.png & \gliota\\
+　├── kappa.png & \glkappa\\
+　├── lambda.png & \gllambda\\
 　├── mu.png \hspace{32mm} & \glmu\\
 　├── nu.png & \glnu\\
 　├── omega.png & \glomega\\
@@ -381,7 +398,15 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── varrho.png & \glvarrho\\
 　├── varsigma.png & \glvarsigma\\
 　├── vartheta.png & \glvartheta\\
-　├── xi.png & \glxi\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── xi.png \hspace{39mm} & \glxi\\
 　├── zeta.png & \glzeta\\
 ├── \textbf{LIMITERS} & \\
 　├── Vert.png & \glVert\\
@@ -394,16 +419,8 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── rceil.png & \glrceil\\
 　├── rfloor.png & \glrfloor\\
 　├── vert.png & \glvert\\
- \end{tabular}
-\end{table}
-
-\newpage
-　
-\begin{table}[H]
-\fs{14pt}
-\begin{tabular}{ll}
 ├── \textbf{OPERATORS} & \\
-　├── approx.png \hspace{24mm} & \glapprox\\
+　├── approx.png & \glapprox\\
 　├── ast.png & \glast\\
 　├── bullet.png & \glbullet\\
 　├── cap.png & \glcap\\
@@ -413,7 +430,15 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── cup.png & \glcup\\
 　├── div.png & \gldiv\\
 　├── equiv.png & \glequiv\\
-　├── eth.png & \gleth\\
+ \end{tabular}
+\end{table}
+
+\newpage
+　
+\begin{table}[H]
+\fs{14pt}
+\begin{tabular}{ll}
+　├── eth.png \hspace{36mm} & \gleth\\
 　├── exists.png & \glexists\\
 　├── forall.png & \glforall\\
 　├── geq.png & \glgeq\\
@@ -432,7 +457,10 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── oplus.png & \gloplus\\
 　├── parallel.png & \glparallel\\
 　├── partial.png & \glpartial\\
- \end{tabular}
+　├── perp.png & \glperp\\
+　├── pm.png & \glpm\\
+　├── propto.png & \glpropto\\
+　\end{tabular}
 \end{table}
 
 \newpage
@@ -440,10 +468,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
-　├── perp.png \hspace{28mm} & \glperp\\
-　├── pm.png & \glpm\\
-　├── propto.png & \glpropto\\
-　├── setminus.png & \glsetminus\\
+　├── setminus.png \hspace{24mm} & \glsetminus\\
 　├── sim.png & \glsim\\
 　├── simeq.png & \glsimeq\\
 　├── star.png & \glstar\\
@@ -464,22 +489,22 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── cdots.png & \glcdots\\
 　├── complement.png & \glcomplement\\
 　├── dagger.png & \gldagger\\
-　├── ddots.png & \glddots\\
-　├── ell.png & \glell\\ 
-　├── hbar.png & \glhbar\\
-　├── iint.png & \gliint\\
-　├── infty.png & \glinfty\\
-　├── int.png & \glint\\
 　\end{tabular}
 \end{table}
-
+　
 \newpage
 　
 \begin{table}[H]
 \fs{14pt}
 \begin{tabular}{ll}
+　├── ddots.png \hspace{31mm} & \glddots\\
+　├── ell.png & \glell\\ 
+　├── hbar.png & \glhbar\\
+　├── iint.png & \gliint\\
+　├── infty.png & \glinfty\\
+　├── int.png & \glint\\
 　├── ldots.png & \glldots\\
-　├── oint.png \hspace{28mm} & \gloint\\
+　├── oint.png & \gloint\\
 　├── prime.png & \glprime\\
 　├── prod.png & \glprod\\
 　├── sum.png & \glsum\\
@@ -488,6 +513,7 @@ SyncTeX：gedit と evince(PDF viewer) で LaTeX と PDF を同期します。
 　├── texttrademark.png & \gltexttrademark\\
 　├── vdots.png & \glvdots\\
 　├── wp.png & \glwp\\
+
 　\end{tabular}
 \end{table}
 
